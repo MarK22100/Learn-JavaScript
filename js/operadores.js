@@ -1,65 +1,96 @@
-//operadores de asignacion
-let num1 = 5;
-let num2 = 10;
-//para asignar valor al momento de inicializarla o despues
+console.log('estoy en operadores');
 
-//operadores aritmeticos
+//##Operadores de asignacion =
+let numero=5 //declarando una variable del tipo let y la estamos asignando/inicializando con el operador = y con valor 5
+console.log('Valor de numero: ', numero);
 
-//SUMA
+let numero2=3;
+console.log('Valor de numero2: ', numero2);
 
-let suma = num1 + num2;
-console.log(suma);
+numero2=numero;
+console.log('Valor de numero2 luego de igualarla a numero: ', numero2);
 
-//RESTA
+//##OPERADORES ARITMETICOS +, -, *, /, %
 
-let resta = num1 - num2;
-console.log(resta);
-//MULTIPLICACION
+let valor=10;
+let valor2=10;
 
-let multiplcacion = num1 * num2;
-console.log(multiplcacion);
-//DIVISION 
+//operador suma
 
-let division = num1 / num2;
-console.log(division);
-//RESTO 
+let suma=valor + valor2; //tener en cuenta que si el valor de las variables es distinto de numeros el operador funciona como concatenacion;
+console.log('El valor de suma es: ', suma);
 
-let resto = num1 % num2;
-console.log(resto);
+//operador resta
 
-//operadores de incremeto y decremento
+let resta=valor - valor2;
 
-num1++;
+console.log('El valor de resta es: ', resta);
 
-num2--;
+//operador multiplicacion
 
-//asignacion de incremento y decremento
+let multiplicacion=valor * valor2;
+console.log('El valor de multiplicacion es: ', multiplicacion);
 
-num1=+10;
+//operador division
 
-num2=-5;
+let division=valor/valor2;
+console.log('El valor de division es: ', division);
 
-//operadores de negacion
-let logica = true;
-console.log('El valor de la let logica es', logica)
-console.log('El valor de la let logica es', !logica)
+//operador modulo o resto
 
-//operadores CONDICIONES (RELACIONALES - LOGICOS)
+let resto=valor % valor2;
+console.log('El valor de resto es: ', resto);
 
-//RELACIONALES
-let variable1 = '10';
-let variable2= '10';
+//##OPERADORES UNITARIOS
+
+//operador de incremento
+
+// opc:1 valor = valor + 1;
+//valor++; // esto siginifica que se va a incrementar en 1 el valor de la variable
+//valor+=valor2;
+valor+=3;
+console.log('El valor de  let valor es: ', valor);
+
+//operador de decremento
+//valor--;
+//valor-='b'; esto devuelve NaN
+valor-=3;
+console.log('El valor de  let valor es: ', valor);
+
+//operador de negacion solo funciona con variables del tipo boolean
+
+let logica=true;
+console.log('El valor de la let logica es:', logica);
+console.log('El valor de la let logica NEGADO es:', !logica);
+
+
+//##OPERADORES CONDICIONALES (RELACIONALES - LOGICOS)
+
+//relacionales
+
+let variable1='10';
+let variable2='10';
 
 //op == 'igual a'
-console.log('el op ==', variable1 ==num1);
-//op == ESTRICTAMENTE IGUAL comprueba el VALOR sino tambien los tipos de las mismas
-console.log ('El resultado del op === es: ', variable1 === num1);
-//op != es distinto
-console.log ('El resultado del op === es: ', variable1 != num1);
-//op !== ESTRICTAMENTE distinto
-console.log ('El resultado del op === es: ', variable1 !== num1);
+console.log('el op ==', variable1==valor);
+//op === 'estrictamente igual' comprueba el valor de la variable sino tambien los tipos de las mismas
+console.log('El resultado del op === es:' ,variable1===valor);
+ //op != 'es distinto'
+ console.log('el op != es:', variable1!=valor);
+ //op !== 'estrictamente distinto'
+ console.log('el op !== es:', variable1!==valor);
+ // >, <, >=, <=
 
-// opedadores de comparacion <, >,
+ console.log('el valor de > es:', valor>valor2);
+ console.log('el valor de < es:', valor<valor2);
+ console.log('el valor de >= es:', valor>=valor2);
+ console.log('el valor de <= es:', valor<=valor2);
 
+ //logico
 
+ //--AND LOGICO &&; es true si ambas condiciones son true, caso contrario es false
+
+ console.log('PROBANDO EL &&',variable1!=valor && variable1!==valor );
+//--OR LOGICO ||, retorna true si al menos una de las condiciones evaluadas es true;
+console.log('PROBANDO EL ||',variable1!=valor || variable1!==valor );
 
