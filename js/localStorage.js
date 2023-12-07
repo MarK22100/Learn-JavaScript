@@ -51,6 +51,8 @@ localStorage.clear();
 localStorage.setItem('usuarios', JSON.stringify(arrUsuarios));
 
 const user=localStorage.getItem('usuarios');
+
 const usersLS=JSON.parse(user);
+
 console.log(user);
 console.log(usersLS);
