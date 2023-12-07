@@ -60,10 +60,11 @@ class Sistema {
       return false;
     }
   }
-  existeUsuarioPorDni(dni){
-    const prueba = (element)=>(element.dni===dni);
-    const exist = this.almacenamiento.some(prueba);
-    return false;
+  
+  existeUsuarioPorDNI(dni){
+    const prueba=(element)=>element.dni===dni;
+    const exist=this.almacenamiento.some(prueba);
+    return exist;
   }
 
   crearMentor(mentor) {
@@ -125,12 +126,25 @@ class Sistema {
     }
   };
 
+
+  eliminarRegistro(dni){
+    const almacenamientoActualizado=this.almacenamiento.filter((element)=>element.dni!==dni);
+    if (almacenamientoActualizado.length>0) {
+      this.almacenamiento=almacenamientoActualizado;  
+    }
+    
+  }
+
+
+
+
 };
 
 
 const system=new Sistema();
 
 do {
+let opcion=parseInt(prompt('Seleccione una opcion, 1-CREAR MENTOR, 2-CREAR ALUMNO, 3-LISTAR TODO, 4-LISTAR MENTORES, 5-LISTAR ALUMNOS, 6-ELIMINAR UN RESGISTRO'));
 
     switch (opcion) {
         case 1:
@@ -159,19 +173,22 @@ do {
         case 5:
           system.listarAlumnos();
           break;
+
         case 6:
-          let dniBuscado = prompt('Ingresar el DNI del registro que desea borrar');
-          const resultadoBusqueda = system.existeUsuarioPorDni(dniBuscado);
+          let dniBuscado=prompt('Por favor ingrese el DNI del registro que desea eliminar');
+          const resultadoBusqueda=system.existeUsuarioPorDNI(dniBuscado);
           if (resultadoBusqueda) {
-            const eleccionUsuario = confirm('Seguro de eliminar el registro?')
+            const eleccionUsuario=confirm('¿Esta seguro de eliminar el registro?');
             if (eleccionUsuario) {
-              
+              system.eliminarRegistro(dniBuscado);
+              console.log('Exito se elimino el registro deseado!');
             }
           } else {
-            console.log('No se encontro el registro');
+            console.log('No se encontro el usuario.');
           }
           
-          break
+          
+          break;
         default:
             console.error(`OPCION INGRESADA INVALIDA: INGRESO--> ${opcion}`);
             break;
@@ -187,6 +204,14 @@ localStorage.setItem('almacenamiento',JSON.stringify(system.almacenamiento));
  * 1-COMPROBAR SI EXISTE UN LS ALMACENADO --> localStorage.getItem(almacenamiento); string | null
  * 1-a-si es string necesito convertirlo de nuevo a un array --> JSON.parse[resultado localStorage];
  * 1-b-si es null necesitamos crear localStorage --> localStorage.setItem('almacenamiento', JSON.stringify([]));
+ * 
+ * PASOS PARA ELIMINAR REGISTRO:
+ *  * primero tendriamos que discriminar el usuario que queremos eliminar, mediante el dni{
+ * caso 1 encuentra el usuario buscado-->mostrar un msj de confirmacion, en caso de aceptar, mostrar msj indicando que se elimino y luego persistir el nuevo array filtrado el cual ya no tiene el usuario que deseamos eliminar;, en caso de que cancele mostrar el msj de que si quiere seguir operando
+ * caso 2 no encuentra el usuario--> mostrar msj indicando que no se encontro el usuario--HECHO
+ * }
+ * 
+
  * 
  * 
  */
