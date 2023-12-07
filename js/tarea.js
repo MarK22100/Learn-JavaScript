@@ -135,6 +135,21 @@ switch (numeroDia) {
     default:
         break;
 }
+
+//Crear un programa que pida al usuario un número y luego muestre si es par o impar.
+
+// Crear un programa que pida al usuario un número y luego muestre si es positivo, negativo o cero.
+
+// Crear un programa que pida al usuario dos números y luego muestre cuál es el mayor de los dos.
+
+// Crear un programa que pida al usuario una contraseña y la valide según ciertas condiciones, como la longitud y la presencia de caracteres especiales.
+
+// Crear un programa que pida al usuario una calificación y luego muestre si es aprobatoria o no (nota mínima para aprobar es 70).
+
+// Crear un programa que pida al usuario una letra y luego muestre si es una vocal o una consonante.
+
+// Crear un programa que pida al usuario un número del 1 al 7 y luego muestre el día de la semana correspondiente.
+
 // Crear un programa que pida al usuario un número y luego muestre si es primo o no.
 
 // Crear un programa que pida al usuario su edad y luego muestre si es mayor o menor de edad (18 años).
